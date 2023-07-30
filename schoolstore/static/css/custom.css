@@ -1,0 +1,11 @@
+.my_image my_image_padding{
+padding: 10px;
+width: 100%;
+height: 100%;
+}
+
+footer{
+background-color:white;
+text-align:centre;
+padding:50px;
+}

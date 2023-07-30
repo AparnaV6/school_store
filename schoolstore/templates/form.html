@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="form" method="post"
+      style="background: linear-gradient(135deg, #71b7e6, #9b59b6); text-align:left; padding:50px;"
+      xmlns="http://www.w3.org/1999/html" onsubmit="myFunction()" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+          {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <input type="date" name="dob" placeholder="Date of birth" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <input type="number" name="age" placeholder="Age" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <label for="gender">Gender:</label></br>
+        <select name="gender" id="gender" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="T">Transgender</option>
+          <option value="NA">Do not wish to disclose</option>
+        </select></br>
+        <input type="number" name="phone" placeholder="Phone number" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <input type="email" name="mail_id" placeholder="Mail ID" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <input type="text" name="address" placeholder="Address" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+        <label for="department">Department</label></br>
+        <select name="department" id="department" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;">
+          <option value="GS">GeneralScience</option>
+          <option value="C">Commerce</option>
+          <option value="A">Arts</option>
+          <option value="AS">Astronomy</option>
+          <option value="CS">ComputerScience</option>
+        </select></br>
+        <label for="courses">Courses:</label></br>
+        <select name="courses" id="courses" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;">
+        {% if department == GS %}
+            <option value="BSc">BSc</option>
+            <option value="MSc">MSc</option>
+        {% if department == C %}
+            <option value="BCom">BCom</option>
+            <option value="MCom">MCom</option>
+        {% if department == A %}
+            <option value="BA">BA</option>
+            <option value="MA">MA</option>
+        {% if department == AS %}
+            <option value="BSc.Astronomy">BSc.Astronomy</option>
+            <option value="MSc.Astronomy">MSc.Astronomy</option>
+        {% if department == CS %}
+            <option value="BSc.CS">BSc.Computer Science</option>
+            <option value="MSc.CS">MSc.Computer Science</option>
+        </select></br>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+
+        <label for="purpose">Purpose:</label></br>
+        <select name="purpose" id="purpose" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;">
+          <option value="Enquiry">Enquiry</option>
+          <option value="Place order">Place order</option>
+          <option value="Return">Return</option>
+        </select></br>
+        <label for="Materials provided" id="Materials provided">Materials provided</label>
+        <input type="checkbox" name="Note book" id="Note book">
+        <label for="Note book">Note book</label>
+        <input type="checkbox" name="Pen" id="Pen">
+        <label for="Pen">Pen</label>
+        <input type="checkbox" name="Exam papers" id="Exam papers">
+        <label for="Exam papers">Exam papers</label>
+        <input type="submit">
+</form>
+<script>
+    function myFunction() {
+      alert("Order Confirmed!");
+    }
+</script>
+
+<div class="button about_button" style="font-size:20px;padding:10px;"><a href="{% url 'schoolapp:home' %}"><button>Home</button></a></div>
+<div class="button about_button" style="font-size:20px;padding:10px;"><a href="{% url 'credentials_app:logout' %}"><button>Logout</button></a></div>
+{% endblock %}

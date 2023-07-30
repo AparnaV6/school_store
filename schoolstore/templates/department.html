@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="mx_auto">
+        {% if category %}
+            <img class="my_image" src="{{cat.image.url}}" alt="{{cat.name}}">
+    </div>
+    <br>
+    <div>
+        <h1 class="text-center my_title">{{department.name}}</h1>
+        <p class="text-justify">{{department.description}}</p>
+    </div>
+        {% else %}
+        <div>
+            <center><img class="my_image my_image_padding" src="{% static 'img/dept.jpeg' %}" alt="Departments"></center>
+        </div>
+        <br>
+    <div>
+        <h1 class="text-center my_title">Departments</h1>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+    </div>
+        {% endif %}
+{% endblock %}

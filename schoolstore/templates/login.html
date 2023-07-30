@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="login">
+        <h1 style="text-align:center;">Login</h1>
+        <form action="login" method="post" style="background: linear-gradient(135deg, #71b7e6, #9b59b6); text-align: center; padding:50px;">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="username" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+          <input type="password" name="password" placeholder="password" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+
+        </form>
+    </div>
+    <div class="button about_button" style="text-align: center;padding:10px;"><a href="{% url 'schoolapp:new_page' %}"><input type="submit"></a></div>
+    <div class="button about_button" style="text-align: center;padding:10px;"><a href="{% url 'credentials_app:register' %}"><button>register here</button></a></div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="dropdown">
+  <a class="btn btn-float-right dropdown-toggle" data-toggle="dropdown" href="#">
+    <i class="icon-user"></i> Dropdown
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <li><a tabindex="-1" href="{% url 'schoolapp:gscience' %}">General Science</a></li>
+    <li><a tabindex="-1" href="{% url 'schoolapp:commerce' %}">Commerce</a></li>
+    <li><a tabindex="-1" href="{% url 'schoolapp:arts' %}">Arts</a></li>
+    <li><a tabindex="-1" href="{% url 'schoolapp:astro' %}">Astronomy</a></li>
+    <li><a tabindex="-1" href="{% url 'schoolapp:cscience' %}">Computer Science</a></li>
+  </ul>
+</div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'schoolapp:home' %}">Home</a>
+      </li>
+
+      {% if user.is_authenticated %}
+      <li>Hello {{user.username}}</li>
+      <li><a class="nav-link" href="{% url 'credentials_app:logout' %}">Logout</a></li>
+      {% else %}
+      <li><a class="nav-link" href="{% url 'credentials_app:register' %}">Register</a></li>
+      <li><a class="nav-link" href="{% url 'credentials_app:login' %}">Login</a></li>
+      {% endif %}
+    </ul>
+
+
+
+  </div>
+
+
+  </div>
+</nav>
+

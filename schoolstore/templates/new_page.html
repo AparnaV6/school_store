@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="text-center my_title" style="color:white;font-size:25px;padding:20px;">Please click below to load and fill the form.</h1>
+    <div class="button about_button" style="align:center;margin-left:50%;margin-top:10%;font-size:20px;"><a href="{% url 'schoolapp:form_page' %}"><button>Load form</button></a></div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title"><h2 style="font-size:40px;"><b>Computer Science</b></h2></div>
+				</div>
+			</div>
+			<div class="row about_row">
+				<div class="col-lg-6">
+					<div class="about_content">
+						<div class="about_text" style="font-size:20px;color:white;">
+							<p>Computer science is the study of computation, information, and automation. Computer science spans theoretical disciplines (such as algorithms, theory of computation, and information theory) to applied disciplines (including the design and implementation of hardware and software). Though more often considered an academic discipline, computer science is closely related to computer programming.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_image"><img src="{% static 'img/gff.jpg' %}" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="registration">
+            <h1 style="text-align: center;">Register here</h1>
+        <form action="register" method="post" style="background: linear-gradient(135deg, #71b7e6, #9b59b6); text-align: center; padding:50px;">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+            <input type="email" name="email" placeholder="E-mail" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+            <input type="password" name="password" placeholder="Password" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+            <input type="password" name="password2" placeholder="Confirm Password" style="padding: 10px 30px; border-radius: 5px; margin: 20px 0 12px 0;"><br>
+
+        </form>
+        <div class="button about_button" style="text-align: center;"><a href="{% url 'credentials_app:login' %}"><input type="submit" ></a></div>
+    </div>
+{% endblock %}
